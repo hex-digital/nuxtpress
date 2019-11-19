@@ -1,0 +1,39 @@
+{
+  "name": "wuxt",
+  "version": "0.0.1",
+  "description": "WordPress and nuxt.js in an awesome dev environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "enter:front": "docker exec -ti front.wuxt bash",
+    "enter:wp": "docker exec -ti wp.wuxt bash",
+    "enter:mysql": "docker exec -ti mysql.wuxt bash",
+    "wp": "node ./_scripts/tools/wp.js",
+    "env": "node ./_scripts/tools/env.js",
+    "yarn": "node ./_scripts/tools/yarn.js",
+    "scaffold:cpt": "node ./_scripts/scaffold/cpt.js",
+    "scaffold:tax": "node ./_scripts/scaffold/taxonomy.js",
+    "generate": "docker exec front.wuxt yarn generate && docker-compose --log-level CRITICAL -f dist.yml up -d && docker-compose --log-level CRITICAL -f dist.yml restart && docker-compose --log-level CRITICAL down && docker-compose --log-level CRITICAL up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northosts/wuxt.git"
+  },
+  "keywords": [
+    "nuxt.js",
+    "nuxt",
+    "wordpress",
+    "wp",
+    "wp-rest-api"
+  ],
+  "author": "Northosts AB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northosts/wuxt/issues"
+  },
+  "homepage": "https://github.com/northosts/wuxt#readme",
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0"
+  }
+}
