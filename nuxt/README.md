@@ -1,6 +1,6 @@
-# nuxtpress
+# wiredscore-website-client
 
-> My good Nuxt.js project
+> My phenomenal Nuxt.js project
 
 ## Build Setup
 

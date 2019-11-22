@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #ALIASES
+   ========================================================================== */
+
+/**
+ * The aliases tools file contains aliases for shortening long variable, mixin
+ * and function names to make them easier to use throughout the project.
+ */
+
+$available-spacing-units: (
+  null: $inuit-global-spacing-unit,
+  'tiny': $inuit-global-spacing-unit-tiny,
+  'small': $inuit-global-spacing-unit-small,
+  'large': $inuit-global-spacing-unit-large,
+  'huge': $inuit-global-spacing-unit-huge,
+  'none': 0
+) !default;
+
+@function spacing-unit($_unit: null) {
+  @return map-get($available-spacing-units, $_unit);
+}
+
+@function r($_component) {
+    @return responsive($_component);
+}
+
+@function z($_value) {
+    @return z-index($_value);
+}

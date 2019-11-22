@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+
+/**
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ */
+
+/**
+ * [1] Normalise font weights so titles aren't set to bold by default
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; /* [1] */
+  margin-bottom: 0;
+}

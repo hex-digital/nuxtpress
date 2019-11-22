@@ -1,0 +1,153 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * The text utilities file contains many helper classes for text;
+ *
+ * This includes `text-transform`, `font-` styles, alignment and spacing,
+ * and the text style and responsive text style class generation, using the
+ * global-text-map from _settings.text.scss.
+ */
+
+/* stylelint-disable max-nesting-depth */
+
+// Style helpers
+
+.u-capitalize {
+    text-transform: capitalize;
+}
+
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+.u-italic {
+    font-style: italic;
+}
+
+.u-decoration-none {
+    text-decoration: none;
+}
+
+.u-underline {
+    text-decoration: underline;
+}
+
+.u-line-through {
+    text-decoration: line-through;
+}
+
+// Weight helpers
+
+.u-bold {
+    font-weight: 700;
+}
+
+.u-normal {
+    font-weight: 400;
+}
+
+.u-title {
+    font-family: $font-family-title;
+}
+
+.u-content {
+    font-family: $font-family-content;
+}
+
+.u-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Used for price in Browse Products
+
+.u-ellipsis--two-lines {
+    @include line-clamp(2);
+}
+
+// Fixed height needed on Browse Products page so we have even
+// ...height items that are on either one or two lines.
+
+.u-text-height-110 {
+    height: 110px;
+}
+
+// Alignment helpers
+
+.u-text {
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--no-wrap {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &--center\@smallDesk {
+        @include mq($from: 'smallDesk') {
+            text-align: center;
+        }
+    }
+
+    &--center\@desk {
+        @include mq($from: 'desk') {
+            text-align: center;
+        }
+    }
+
+    &--center-until-desk {
+        @include mq($until: 'desk') {
+            text-align: center;
+        }
+    }
+
+    &--space {
+        letter-spacing: 2px;
+
+        &-huge {
+            letter-spacing: 4px;
+        }
+
+        &-large {
+            letter-spacing: 3px;
+        }
+
+        &-small {
+            letter-spacing: 1px;
+        }
+
+    }
+
+    @each $_sizing, $_text-map in $global-text-map {
+        $_responsive-map: map-get($_text-map, 'responsive');
+
+        &--#{$_sizing} {
+            @include text-styles($_sizing);
+
+            @if $_responsive-map {
+
+                &.u-text--responsive {
+                    @include text-styles-responsive-only($_sizing);
+                }
+
+            }
+
+        }
+
+    }
+}
+
+.u-reset-line-height {
+    line-height: 1;
+}
+
+/* stylelint-enable max-nesting-depth */

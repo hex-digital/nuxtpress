@@ -1,0 +1,99 @@
+/* ==========================================================================
+   #FLEX
+   ========================================================================== */
+
+/**
+ * Use Flex to tweak position of elements in their containers. It is advised
+ * against using Flex for full page layouts, as CSS Grids handles this better.
+ *
+ * Flex is not supported in IE9, so bear this in mind when using it.
+ *
+ * <div class="u-flex">
+ *   <div></div>
+ *   <div></div>
+ * </div>
+ *
+ * Several modifier classes are provided to handle the flex functionality.
+ *
+ * For example, `u-flex--justify-space-between` will space the children out
+ * evenly within the object, and u-flex--align-center will center them
+ * vertically.
+ *
+ * <div class="u-flex u-flex--justify-space-between u-flex--align-center">
+ *   <div></div>
+ *   <div></div>
+ * </div>
+ *
+ * The following SASS maps can be adjusted to specify which modifiers you need.
+ *
+ * $flex-align-items, $flex-align-self, $flex-justify-content
+ */
+
+$flex-align-items: (
+  '-baseline': baseline,
+  '-flex-start': flex-start,
+  '-flex-end': flex-end,
+  '-center': center,
+  '-stretch': stretch,
+) !default;
+
+$flex-align-self: (
+  '-baseline': baseline,
+  '-flex-start': flex-start,
+  '-flex-end': flex-end,
+  '-center': center,
+  '-stretch': stretch,
+) !default;
+
+$flex-justify-content: (
+  '-flex-start': flex-start,
+  '-flex-end': flex-end,
+  '-center': center,
+  '-space-around': space-around,
+  '-space-between': space-between,
+) !default;
+
+.u-flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  @each $_alignment-namespace, $_alignment in $flex-align-items {
+
+    &--align#{$_alignment-namespace} {
+      align-items: $_alignment;
+    }
+
+  }
+  @each $_alignment-namespace, $_alignment in $flex-align-self {
+
+    &--self#{$_alignment-namespace} {
+      align-self: $_alignment;
+    }
+
+  }
+  @each $_justify-namespace, $_justify in $flex-justify-content {
+
+    &--justify#{$_justify-namespace} {
+      justify-content: $_justify;
+    }
+
+  }
+
+  // Flex alignment helpers
+
+  &--pull-right {
+    margin-left: auto;
+  }
+
+  &--pull-left {
+    margin-right: auto;
+  }
+
+}

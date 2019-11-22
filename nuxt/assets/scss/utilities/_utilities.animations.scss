@@ -1,0 +1,20 @@
+@include keyframes(animSpin) {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes animScaleYTo0 {
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes animScaleYTo1 {
+  100% {
+    transform: scaleY(1);
+  }
+}

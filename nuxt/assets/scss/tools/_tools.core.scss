@@ -1,0 +1,101 @@
+/**
+ * This file contains tools that are used by the settings, as well as else where in the application.
+ * This means you almost always want to load it as soon as possible, possibly as the first file.
+ * Therefore it should NOT use any values defined in settings, as they won't be available yet.
+ */
+
+/**
+ * Multiply or divide a number by itself, x^n, where x is number and n is exponent.
+ */
+@function powerNumber($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}
+
+/**
+ * Find the luminance of a color (its brightness).
+ * A luminance of 1 means the color is white. A luminance score of 0 means the color is black.
+ * This is useful for dealing with dynamic or random colors, such as choosing an accurate background-color if the color
+ * is too bright or too dark.
+ * You can consider that a color whose luminance is over 0.7 is going to be hard to read on a white background.
+ * See https://css-tricks.com/snippets/sass/luminance-color-function/
+ */
+@function colorLuminance($color) {
+  $color-rgb: (
+    'red': red($color),
+    'green': green($color),
+    'blue': blue($color),
+  );
+  @each $name, $value in $color-rgb {
+    $adjusted: 0;
+    $value: $value / 255;
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + 0.055) / 1.055;
+      $value: powerNumber($value, 2);
+    }
+    $color-rgb: map-merge(
+      $color-rgb,
+      (
+        $name: $value,
+      )
+    );
+  }
+  @return (map-get($color-rgb, 'red') * 0.2126) + (map-get($color-rgb, 'green') * 0.7152) +
+    (map-get($color-rgb, 'blue') * 0.0722);
+}
+
+/**
+ * Find an appropriate color to use as an inverse, such as for text on top of the color.
+ */
+@function findColorInvert($color) {
+  @if (colorLuminance($color) > 0.55) {
+    @return rgba(#000, 0.7);
+  } @else {
+    @return #fff;
+  }
+}
+
+/**
+ * Find a light version of a color by upping the lightness.
+ */
+@function findLightColor($color) {
+  @if type-of($color) != 'color' {
+    @return $color;
+  }
+
+  $l: lightness($color);
+  @if $l < 96% {
+    $l: 96%;
+  }
+
+  @return change-color($color, $lightness: $l);
+}
+
+/**
+ * Find a dark version of a color by reducing the lightness.
+ */
+@function findDarkColor($color) {
+  @if type-of($color) != 'color' {
+    @return $color;
+  }
+
+  $base-l: 29%;
+  $luminance: colorLuminance($color);
+  $luminance-delta: (0.53 - $luminance);
+  $target-l: round($base-l + ($luminance-delta * 53));
+
+  @return change-color($color, $lightness: max($base-l, $target-l));
+}

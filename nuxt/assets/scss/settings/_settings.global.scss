@@ -1,0 +1,49 @@
+/* ==========================================================================
+   #GLOBAL
+   ========================================================================== */
+
+/**
+ * The global settings file contains any project-wide variables; things that
+ * need to be made available to the entire codebase.
+ */
+
+/**
+ * OVERRIDE INUIT DEFAULTS
+ */
+// All inuit vars can be overriden here (except those defined in CORE settings,
+// which should only be modified with caution).
+
+// OBJECTS.CROP
+// Populate these with any specific cropping ratios required, refer to object.
+$inuit-crops: ();
+
+// OBJECTS.RATIO
+// Populate these with any specific aspect ratios required, refer to object.
+$inuit-ratios: (
+  'full-hd': (16:9),
+  '12\\:11'  : (12:11),
+);
+
+// UTILITIES.WIDTHS
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending on the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+$inuit-offsets: false; // Turn on or off push and pull for layout system ( u-pull-1/2, u-push-1/3, etc )
+$inuit-fractions: 1 2 3; // Fractions for grid system ( u-1/1, u-1/3, etc )
+
+// UTILITIES.SPACINGS
+$inuit-spacing-directions: (
+  null: null,
+  '-bottom': '-bottom',
+  '-left': '-left',
+);
+
+// UTILITIES.SPACINGS
+$inuit-spacing-sizes: (
+  null: $inuit-global-spacing-unit,
+  '-tiny': $inuit-global-spacing-unit-tiny,
+  '-small': $inuit-global-spacing-unit-small,
+  '-large': $inuit-global-spacing-unit-large,
+  '-huge': $inuit-global-spacing-unit-huge,
+  '-none': 0
+);

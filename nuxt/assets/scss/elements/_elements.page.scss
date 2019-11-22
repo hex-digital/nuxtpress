@@ -1,0 +1,53 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Some elements are given specific font-family by reset/normalize. Change those specific elements here.
+ */
+
+html {
+
+  /* stylelint-disable order/properties-alphabetical-order */
+  background-color: color('white');
+  font-family: $font-family-content;
+  font-size: ($inuit-global-font-size / 16px) * 1em; /* [1] */
+  line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
+  overflow-y: scroll; /* [2] */
+  min-height: 100%; /* [3] */
+
+  /* stylelint-enable order/properties-alphabetical-order */
+}
+
+body {
+  @include text-styles('base', true);
+}
+
+*,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $font-family-content; /* [4] */
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}

@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #RESPONSIVE
+   ========================================================================== */
+
+/**
+ * The responsive tools file contains functions for accessing the responsive
+ * map defined in _settings.responsive. This map details when different
+ * components should adapt their display for responsive screen sizes.
+ */
+
+@function responsive($_component) {
+    @if not map-has-key($global-responsive-map, $_component) {
+        @error 'No component found for `#{$_component}` in $global-responsive-map.';
+    }
+    @return map-get($global-responsive-map, $_component);
+}

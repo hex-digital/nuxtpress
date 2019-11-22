@@ -1,0 +1,7 @@
+@function append-cache-query($file) {
+  $cache-query: map-get($cache-query-map, $file);
+  @if null != $cache-query {
+    $cache-query: '?v=#{$cache-query}';
+  }
+  @return '#{$file}#{$cache-query}';
+}

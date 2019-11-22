@@ -12,7 +12,7 @@ services:
 
     wp.nuxtpress:
         container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
-        image: wordpress:5.2.4-php7.3-apache
+        image: wordpress:5.3.0-php7.3-apache
         volumes:
           - ./wp-content:/var/www/html/wp-content:delegated
         expose:
@@ -42,6 +42,7 @@ services:
             - NUXTPRESS_PORT_BACKEND=${NUXTPRESS_PORT_BACKEND:-3080}
         ports:
             - '${NUXTPRESS_PORT_FRONTEND:-3000}:3000'
+            - '${NUXTPRESS_PORT_STORYBOOK:-6006}:6006'
         volumes:
             - ./nuxt:/var/www/app:delegated
         command: bash -c "yarn install && NUXTPRESS_PORT_BACKEND=${NUXTPRESS_PORT_BACKEND:-3080} yarn dev"

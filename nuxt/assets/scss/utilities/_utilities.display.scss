@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * The display utilities file contains many helper classes display and box
+ * properties.
+ */
+
+$_display-properties: inline, inline-block, block, none;
+
+@each $_property in $_display-properties {
+
+    .u-display-#{$_property} {
+        display: $_property;
+    }
+
+}

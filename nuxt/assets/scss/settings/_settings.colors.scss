@@ -1,0 +1,101 @@
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+
+/**
+ * The colors settings file contains all colors used throughout the project;
+ * hex color codes should not be used anywhere outside of this file
+ *
+ * First, a series of palette colors are defined.
+ * Then, a set of monochrome and theme colors are defined from those.
+ * We should ONLY use the theme and monochrome colors throughout the scss,
+ * so that changing them in the future is easier.
+ *
+ * E.g. $color-primary: $color-red -> $color-primary: $color-green
+ * This is a one-line change in this colors file, but changing $color-red to
+ * $color-green across the whole project would require changing many files.
+ */
+
+/**
+ * PALETTE
+ */
+// Do not use these in your scss - only use these to define the THEME
+// colors below.
+// We've left red in as an example of how to define them.
+$palette-green: #23d160;
+$palette-yellow-sun: #ffdd57;
+$palette-blue-viking: #63afe3;
+$palette-pink-azalea: #f6becf;
+
+
+
+
+
+/**
+ * MONOCHROME
+ */
+// Only use these and Theme colors in the scss code!
+// It is okay to change these colours to what is needed for your project.
+//
+// Access these colours using the tool `theme-color()` (or `color()` alias):
+// .example {
+//     color: color('grey-90');
+// }
+$monochrome-colors: (
+  'white': #fff,
+  'white-two': #f5f5f5,
+  'white-three': #e4e4e4,
+  'silver': #cacaca,
+  'grey-dark': #2b2e2e,
+  'black': #1c1c1c,
+);
+
+
+
+
+
+/**
+ * THEME
+ */
+// Only use these and Monochrome colors in the scss code!
+//
+// Access these colours using the tool `theme-color()` (or `color()` alias):
+// .example {
+//     color: color('primary');
+// }
+$theme-colors: (
+  'primary': $palette-green,
+  'secondary': $palette-yellow-sun,
+  'tertiary': $palette-blue-viking,
+  'quaternary': $palette-pink-azalea,
+);
+
+
+
+
+
+$map-core-colors: map-merge($monochrome-colors, $theme-colors);
+
+// UTILITIES.COLORS
+// For generating utility classes such as u-color-primary or u-fill-primary
+$map-color-utility: (
+  'color': (
+    'primary': map-get($map-core-colors, 'primary'),
+    'white': map-get($map-core-colors, 'white'),
+    //'secondary': map-get($map-core-colors, 'secondary'),
+    //'tertiary': map-get($map-core-colors, 'tertiary'),
+    //'quaternary': map-get($map-core-colors, 'quaternary'),
+  //  'black': map-get($map-core-colors, 'black'),
+  ),
+  //'background-color': (
+    //'primary': map-get($map-core-colors, 'primary'),
+    //'secondary': map-get($map-core-colors, 'secondary'),
+    //'tertiary': map-get($map-core-colors, 'tertiary'),
+    //'quaternary': map-get($map-core-colors, 'quaternary'),
+    //'white': map-get($map-core-colors, 'white-three'),
+    //'black': map-get($map-core-colors, 'black'),
+  //),
+  //'fill': (
+  //  'white': map-get($map-core-colors, 'white'),
+  //),
+);

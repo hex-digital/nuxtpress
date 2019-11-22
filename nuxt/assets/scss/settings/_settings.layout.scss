@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #LAYOUT
+   ========================================================================== */
+
+/**
+ * The layout settings file contains settings specific to the laying out of
+ * elements across the project;
+ * This includes a map for adjusting z-indexes, and any component sizes that
+ * need to be defined at the global level.
+ */
+
+// --- Layering --- ONLY Access with the `z-index()` mixin (or `z()` alias)
+// which is defined in _tools.layout-functions.scss
+// Simply add a new key:value when required.
+// The values can be adjusted without worry, but the keys cannot. Only add new keys.
+$global-z-index: (
+  aboveAll             : 100,
+  modal                : 65,
+  overlay              : 60,
+  error                : 50,
+  nav                  : 31,
+  componentsForeground : 30,
+  componentsBackground : 10,
+  foreground           : 5,
+  base                 : 1,
+  background           : -1,
+  deepBackground       : -10,
+);

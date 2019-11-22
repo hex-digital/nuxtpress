@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #RESPONSIVE
+   ========================================================================== */
+
+/**
+ * The responsive settings file contains any project-wide responsive settings;
+ * This includes all SASS-MQ settings for breakpoints
+ */
+
+
+// Responsivity
+$mq-responsive: true;
+
+// Breakpoints should be defined to fit with the content, not device sizes
+// We encourage the below to be changed to suit your projects visual design
+
+// These breakpoints should also be updated in resources/assets/js/app.js
+$mq-breakpoints: (
+  tinyPalm:         18em,  // 288px
+  smallPalm:        22em,  // 352px
+  mediumPalm:       32em,  // 512px
+  palm:             42em,  // 672px
+  device:           46em,  // 736px
+  smallDesk:        54em,  // 864px
+  desk:             66em,  // 1056px
+  largeDesk:        75em,  // 1200px
+  wideDesk:         85em,  // 1360px
+  wide1920:         120em, // 1920px
+);
+
+$mq-show-breakpoints: ();
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+@if (inuit-config(env) == dev) {
+  $mq-show-breakpoints: (tinyPalm, smallPalm, mediumPalm, palm, device, smallDesk, desk, largeDesk, wideDesk, wide1920);
+}
+
+// This map is used by different components and objects across the site to
+// specify at which breakpoints they will change their appearance.
+$global-responsive-map: (
+  mobileNav: smallDesk,
+);

@@ -1,0 +1,172 @@
+
+/* ==========================================================================
+   INUITCSS
+   ========================================================================== */
+
+/**
+ * inuitcss, by @csswizardry
+ *
+ * github.com/inuitcss | inuitcss.com
+ */
+
+/**
+ * This is an example inuitcss manifest file. DO NOT MODIFY THIS FILE DIRECTLY.
+ * Instead, copy and paste it into your own CSS directory and make additions,
+ * extensions, and modifications there.
+ */
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Core.................inuitcss’ core and setup settings.
+ * Global...............Project-wide variables and settings.
+ *
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Reset................A tiny reset to complement Normalize.css.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ * Tables...............Simple table styles.
+ *
+ * OBJECTS
+ * Wrapper..............Page constraint object.
+ * Layout...............Generic layout module.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
+ * Flag.................Table-layout-based advancement on the Media object.
+ * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
+ * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
+ * Table................Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
+ *
+ * COMPONENTS
+ * Buttons..............An example button component, and how it fits into the
+ *                      inuitcss framework.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacings.............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Responsive-Spacings..Enhances the function of normal spacings for
+ *                      responsive usage.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Hide.................Helper classes to hide content
+ */
+
+// SETTINGS
+@import './settings-tools.scss';
+
+
+
+
+
+// GENERIC
+@import '~inuitcss/generic/generic.box-sizing';
+@import '~inuitcss/generic/generic.normalize';
+@import '~inuitcss/generic/generic.reset';
+@import '~inuitcss/generic/generic.shared';
+//@import './generic/generic.fonts';
+
+
+
+
+
+// ELEMENTS
+// @import '~inuitcss/elements/elements.headings';
+@import '~inuitcss/elements/elements.images';
+@import '~inuitcss/elements/elements.tables';
+@import './elements/elements.page';
+@import './elements/elements.headings';
+
+
+
+
+
+// OBJECTS
+//
+// Objects should be done in scss files, and not in Vue files, so that they can
+// be added to other components, which is sometimes necessary.
+// However, we should strive to turn each object into a Vue component as well
+// for easy use.
+
+// Uncomment and add to this section as necessary.
+//@import '~inuitcss/objects/objects.media';
+// @import '~inuitcss/objects/objects.flag';
+//@import '~inuitcss/objects/objects.list-bare';
+//@import '~inuitcss/objects/objects.list-inline';
+// @import '~inuitcss/objects/objects.block';
+//@import '~inuitcss/objects/objects.ratio';
+// @import '~inuitcss/objects/objects.crop';
+// @import '~inuitcss/objects/objects.table';
+// @import '~inuitcss/objects/objects.pack';
+//@import 'objects/objects.accordion';
+//@import 'objects/objects.columns';
+//@import 'objects/objects.box';
+//@import 'objects/objects.button-group';
+//@import 'objects/objects.columns';
+//@import 'objects/objects.content';
+//@import 'objects/objects.flex';
+//@import 'objects/objects.layout';
+//@import 'objects/objects.list-bare';
+//@import 'objects/objects.list-ordered';
+//@import 'objects/objects.pull';
+//@import 'objects/objects.wrapper';
+//@import 'objects/objects.media';
+//@import 'objects/objects.filler';
+//@import 'objects/objects.radio-group';
+
+
+
+
+
+// COMPONENTS
+
+// Components should be done in the individual Vue files.
+// So we probably shouldn't add anything here.
+
+
+
+
+
+//// UTILITIES
+@import '~inuitcss/utilities/utilities.clearfix';
+
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending of the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+$inuit-offsets: false !default;
+@import '~inuitcss/utilities/utilities.widths';
+@import '~inuitcss/utilities/utilities.spacings';
+@import '~inuitcss-hex/utilities/utilities.colors';
+@import '~inuitcss-hex/utilities/utilities.object-fit';
+@import '~inuitcss-hex/utilities/utilities.position';
+//@import '~inuitcss-hex/utilities/utilities.svg-icons';
+@import '~inuitcss-hex/utilities/utilities.visibility';
+@import 'utilities/utilities.animations';
+@import 'utilities/utilities.display';
+@import 'utilities/utilities.heights';
+@import 'utilities/utilities.flex';
+@import 'utilities/utilities.text';
+@import 'utilities/utilities.transitions';

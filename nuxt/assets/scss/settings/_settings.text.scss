@@ -1,0 +1,81 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * The text settings file contains any project-wide text and type settings;
+ * Font families are given variable names here for use throughout the scss.
+ * Font sizings are also provided here, which are mapped out and provide
+ * responsive sizings to change across devices.
+ */
+
+// Create variables for the font families to be used across the project.
+$font-family-title: 'serif';
+$font-family-content: 'sans-serif';
+
+$input-label-size-percentage: 87.5%;
+
+// The global text map defines a map of text sizings, with their corresponding
+// font sizes, and optionally line-height and letter spacing.
+//
+// A responsive map can be provided to change these text sizings at different
+// breakpoints, allowing for a uniform website that grows and shrinks across
+// devices. All text sizes are mobile-first, and go from the breakpoint upwards.
+//
+// ONLY access this map using the mixins in _tools.text-functions.scss.
+// There are also helper classes for u-text in _utilities.type.scss, which allow
+// the use of .u-text--${size} and .u-text--responsive to add the below styles.
+$global-text-map: (
+  'massive': (
+    size: 135px,
+    line-height: 125px,
+  ),
+  'huge': (
+    size: 32px,
+    line-height: 40px,
+    letter-spacing: 5px,
+    responsive: (
+      device: (
+        size: 48px,
+        line-height: 52px,
+        letter-spacing: 5px,
+      )
+    )
+  ),
+  'large': (
+    size: 24px,
+    line-height: 32px,
+    letter-spacing: 0,
+    responsive: (
+      desk: (
+        size: 32px,
+        line-height: 40px,
+        letter-spacing: 0,
+      )
+    )
+  ),
+  'base': (
+    size: 16px,
+    line-height: 24px,
+    letter-spacing: 0,
+    responsive: (
+      desk: (
+        size: 18px,
+        line-height: 24px,
+        letter-spacing: 0,
+      )
+    )
+  ),
+  'small': (
+    size: 12px,
+    line-height: 16px,
+    letter-spacing: 0,
+    responsive: (
+      desk: (
+        size: 14px,
+        line-height: 24px,
+        letter-spacing: 0,
+      )
+    )
+  ),
+);
