@@ -1,5 +1,10 @@
+import axios from 'axios';
+
 export default {
   mode: 'universal',
+  env: {
+    NUXTPRESS_PORT_BACKEND: process.env.NUXTPRESS_PORT_BACKEND || '3080',
+  },
   /*
    ** Headers of the page
    */
@@ -36,7 +41,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/globalComponents.js'],
+  plugins: ['~/plugins/globalComponents.js', { src: '~/plugins/wp-api-docker-connector', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,6 +57,16 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '~/modules/static/',
+    [
+      '~/modules/wp-api/index',
+      {
+        endpoint:
+          'http://' +
+          (process.env.NUXTPRESS_WP_CONTAINER ? process.env.NUXTPRESS_WP_CONTAINER : 'wp.nuxtpress') +
+          ':80/wp-json/',
+      },
+    ],
   ],
   /*
    ** Axios module configuration
@@ -78,6 +93,17 @@ export default {
           ],
         ];
       },
+    },
+  },
+  generate: {
+    routes: () => {
+      return axios
+        .get(
+          'http://' +
+            (process.env.NUXTPRESS_WP_CONTAINER ? process.env.NUXTPRESS_WP_CONTAINER : 'wp.nuxtpress') +
+            ':80/wp-json/wuxt/v1/generate'
+        )
+        .then(({ data }) => data);
     },
   },
 };
