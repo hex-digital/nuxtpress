@@ -85,4 +85,3 @@ It is originally coded for [WUXT](https://github.com/northosts/wuxt), a dockeriz
 
 = 1.0 =
 * Version 1.0 done
-
