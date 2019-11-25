@@ -1,4 +1,4 @@
-# wiredscore-website-client
+# nuxtpress-client
 
 > My phenomenal Nuxt.js project
 

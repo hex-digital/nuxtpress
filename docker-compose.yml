@@ -16,38 +16,39 @@ services:
         volumes:
           - ./wp-content:/var/www/html/wp-content:delegated
         expose:
-          - '${NUXTPRESS_PORT_BACKEND:-3080}'
+          - '${NUXTPRESS_WP_PORT:-3080}'
         ports:
-          - '${NUXTPRESS_PORT_BACKEND:-3080}:80'
+          - '${NUXTPRESS_WP_PORT:-3080}:80'
         environment:
           WORDPRESS_DB_HOST: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}:3306
           WORDPRESS_DB_NAME: nuxtpress
           WORDPRESS_DB_USER: root
           WORDPRESS_DB_PASSWORD: dev
-          NUXTPRESS_PORT_BACKEND: ${NUXTPRESS_PORT_BACKEND:-3080}
+          NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
           WORDPRESS_CONFIG_EXTRA: |
-            define('WP_SITEURL', 'http://localhost:${NUXTPRESS_PORT_BACKEND:-3080}' );
-            define('WP_HOME', 'http://localhost:${NUXTPRESS_PORT_BACKEND:-3080}' );
+            define('WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
+            define('WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
             define('WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
         networks:
           - default
 
-    front.nuxtpress:
-        container_name: ${NUXTPRESS_NUXT_CONTAINER:-front.nuxtpress}
-        image: node:11-slim
-        working_dir: '/var/www/app'
-        environment:
-            - HOST=0.0.0.0
-            - NUXTPRESS_WP_CONTAINER=${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
-            - NUXTPRESS_PORT_BACKEND=${NUXTPRESS_PORT_BACKEND:-3080}
-        ports:
-            - '${NUXTPRESS_PORT_FRONTEND:-3000}:3000'
-            - '${NUXTPRESS_PORT_STORYBOOK:-6006}:6006'
-        volumes:
-            - ./nuxt:/var/www/app:delegated
-        command: bash -c "yarn install && NUXTPRESS_PORT_BACKEND=${NUXTPRESS_PORT_BACKEND:-3080} yarn dev"
-        networks:
-          - default
+#    front.nuxtpress:
+#        container_name: ${NUXTPRESS_NUXT_CONTAINER:-front.nuxtpress}
+#        image: node:11-slim
+#        working_dir: '/var/www/app'
+#        environment:
+#            - HOST=0.0.0.0
+#            - NUXTPRESS_WP_CONTAINER=${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
+#            - NUXTPRESS_URL_WP=${NUXTPRESS_URL_WP:-http://localhost:3000}
+#            - NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080}
+#        ports:
+#            - '${NUXTPRESS_PORT_FRONTEND:-3000}:3000'
+#            - '${NUXTPRESS_PORT_STORYBOOK:-6006}:6006'
+#        volumes:
+#            - ./nuxt:/var/www/app:delegated
+#        command: bash -c "yarn install && NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080} yarn dev"
+#        networks:
+#          - default
 
 networks:
     default:
