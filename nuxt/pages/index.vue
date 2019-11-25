@@ -1,5 +1,10 @@
 <template>
   <div>
+    <PageHeader
+      :title="post.title.rendered"
+      :body="post.acf.header_text"
+      :image="post.acf.header_image"
+    ></PageHeader>
     <TemporaryPostData :data="post" />
   </div>
 </template>

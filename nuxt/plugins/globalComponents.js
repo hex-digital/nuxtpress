@@ -13,13 +13,19 @@ import BaseButton from '~/components/Form/Button/Base/BaseButton';
 import BaseTitle from '~/components/Typography/Title/BaseTitle';
 import BaseContent from '~/components/Typography/Content/BaseContent';
 import StripSpace from '~/components/Layout/Spacing/StripSpace';
+import PageHeader from '~/components/PageBlocks/PageHeader';
 
 Vue.component('Box', Box);
 Vue.component('Cluster', Cluster);
 Vue.component('Content', Content);
 Vue.component('Cover', Cover);
 Vue.component('Stack', Stack);
+
 Vue.component('BaseButton', BaseButton);
+
 Vue.component('BaseTitle', BaseTitle);
 Vue.component('BaseContent', BaseContent);
+
 Vue.component('StripSpace', StripSpace);
+
+Vue.component('PageHeader', PageHeader);
