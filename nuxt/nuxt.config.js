@@ -1,28 +1,20 @@
 import axios from 'axios';
 
+const wpUrl = process.env.NUXTPRESS_WP_URL ? process.env.NUXTPRESS_WP_URL : 'http://localhost:3080';
+
 export default {
+  debug: true,
   mode: 'universal',
   env: {
-    NUXTPRESS_PORT_BACKEND: process.env.NUXTPRESS_PORT_BACKEND || '3080',
+    NUXTPRESS_WP_PORT: process.env.NUXTPRESS_WP_PORT || '3080',
   },
   /*
    ** Headers of the page
    */
   head: {
     title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || '',
-      },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://use.typekit.net/edv4wvt.css' },
-    ],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -55,16 +47,13 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '~/modules/static/',
     [
       '~/modules/wp-api/index',
       {
-        endpoint:
-          'http://' +
-          (process.env.NUXTPRESS_WP_CONTAINER ? process.env.NUXTPRESS_WP_CONTAINER : 'wp.nuxtpress') +
-          ':80/wp-json/',
+        endpoint: `${wpUrl}/wp-json/`,
       },
     ],
   ],
@@ -80,7 +69,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        // Allow nicer debugging for the SSR parts of the app by inlining the source maps
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
+      }
+    },
     babel: {
       presets({ isServer }) {
         return [
@@ -97,13 +91,7 @@ export default {
   },
   generate: {
     routes: () => {
-      return axios
-        .get(
-          'http://' +
-            (process.env.NUXTPRESS_WP_CONTAINER ? process.env.NUXTPRESS_WP_CONTAINER : 'wp.nuxtpress') +
-            ':80/wp-json/wuxt/v1/generate'
-        )
-        .then(({ data }) => data);
+      return axios.get(`${wpUrl}/wp-json/wuxt/v1/generate`).then(({ data }) => data);
     },
   },
 };

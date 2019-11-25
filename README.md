@@ -103,7 +103,7 @@ names, add an `.env` file in the same directory of your `docker-compose.yml`
 file. You can adjust the following values:
 
     NUXTPRESS_PORT_FRONTEND=3000
-    NUXTPRESS_PORT_BACKEND=3080
+    NUXTPRESS_WP_PORT=3080
     NUXTPRESS_PORT_GENERATE=8080
     NUXTPRESS_MYSQL_CONTAINER=mysql.nuxtpress
     NUXTPRESS_WP_CONTAINER=wp.nuxtpress
@@ -122,7 +122,7 @@ You will be asked for projectname, front-end-port, back-end-port and dist-port.
 The script creates an `.env` file like the folllowing and stops the old containers:
 
     NUXTPRESS_PORT_FRONTEND=4000
-    NUXTPRESS_PORT_BACKEND=4080
+    NUXTPRESS_WP_PORT=4080
     NUXTPRESS_PORT_DIST=9080
     NUXTPRESS_MYSQL_CONTAINER=mysql.projectname
     NUXTPRESS_WP_CONTAINER=wp.projectname
