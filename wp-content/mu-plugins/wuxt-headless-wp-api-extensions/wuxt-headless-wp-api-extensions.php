@@ -17,8 +17,8 @@
      // adding a slug endpoint
      require_once(dirname(__FILE__) . '/extensions/slug.php');
 
-     // integrating common meta-fields
-     require_once(dirname(__FILE__) . '/extensions/meta.php');
+     // integrating common meta-fields (removed for now as the REST Yoast Meta plugin does this better)
+//     require_once(dirname(__FILE__) . '/extensions/meta.php');
 
      // activating AND-relations for tax-queries
      require_once(dirname(__FILE__) . '/extensions/relation.php');
