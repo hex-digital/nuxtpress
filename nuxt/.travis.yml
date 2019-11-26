@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn
+  - yarn lint
+  - yarn test
+  - yarn run build
+
+notifications:
+  slack:
+    rooms:
+      secure: ZP4DK7aLkl4z/fWLVvPSGzcMsXxnXx043hn8FdL6MfDfB83Bh2NHEtbn4DcdDMyCdr14ki6qp56lq95W3pM+PIjw2xxC+pLvA6+Vb5DrZXuvUqAqDhHimP7lXm9nHtQLO6nXZgDDPo1SceEQ9DgImYO04M2cLB9cLk+QrwzRYc4lVKEyTSk4jqxxz+Pd4acghw6TniFTzg4u5Dfhyj+XAD8Sn64iZ8/Eqi2uddyG5h4op5VMnQK7jlJAWPLju1pTy/bzH2jdgVC/teRfrwDz9IH6wWJKpadk1fsjEShheC6kzdKfhFnbDeLI2gClA3v50MscG132z3ouueGDURWyRQR0jH/KAAlz3a4EnNIGiSedKia+1SHoQ22pak4C2GV8ESYBJKhsxK/OoPqtXBwovwyzFnIDXenBQSKms/ko21Qj+D5OSJXBQGo1o+9sGG0aVXhb1j/p9gI954xzUPoqKQBg3mmmd9oSYanoJBGbirNbkEZO5qRI6yEiEyySw3ZzsXGTyhssDAodxwZIVy2neOD+OQCS9D5OC3mnKglI7RV1Aa2nZW99d09/8abH1bJ5bZV+ePMO9f1zj8qQY7H1Wuv9OQtNU2eqcSLpYjKceEYJwwvooFuH11SiWMZMG0m9b6lm4G1Jd4IRty6EB9pSw0sQa0hM3D7jGCpUrXshaHE=
+    on_success: always
+    on_fail: always
+  email: false
