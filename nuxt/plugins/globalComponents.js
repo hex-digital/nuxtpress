@@ -16,6 +16,7 @@ import StripSpace from '~/components/Layout/Spacing/StripSpace';
 import BasePageHeader from '~/components/PageBlocks/PageHeader/BasePageHeader';
 
 import PostPageHeader from '~/components/PageBlocks/PageHeader/PostPageHeader';
+import BaseWysiwyg from '~/components/PageBlocks/BaseWysiwyg';
 import ImageObject from '~/components/Visual/Images/ImageObject.vue';
 
 Vue.component('Box', Box);
@@ -34,4 +35,5 @@ Vue.component('StripSpace', StripSpace);
 Vue.component('BasePageHeader', BasePageHeader);
 
 Vue.component('PostPageHeader', PostPageHeader);
+Vue.component('BaseWysiwyg', BaseWysiwyg);
 Vue.component('ImageObject', ImageObject);
