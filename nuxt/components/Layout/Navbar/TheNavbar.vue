@@ -1,5 +1,8 @@
 <template>
-  <div>Navbar <nuxt-link to="about-us">About</nuxt-link></div>
+  <div>
+    <span>Navbar</span>
+    <nuxt-link to="about-us">About</nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -8,4 +11,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
