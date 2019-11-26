@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+
+/**
+ * Specific styles for the default img elements
+ *
+ * 1. Set all base images to 100% width
+ * 2. CMS sourced images may hav fixed dimensions which we want to respect
+ *    so unless they have that, we should maintain responsive sizing.
+ */
+
+img {
+  width: 100%;  /* [1] */
+}
+
+img[width],
+img[height] {
+  width: auto; /* [2] */
+}
