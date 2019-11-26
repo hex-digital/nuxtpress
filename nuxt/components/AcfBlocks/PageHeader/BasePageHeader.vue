@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="v-page-header">
     <BaseTitle tag="h2">{{ title }}</BaseTitle>
     <BaseWysiwyg v-if="body" :body="body" />
     <ImageObject v-if="imageObject" :image-object="imageObject" />
@@ -17,4 +17,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.v-page-header {
+  margin-bottom: 4.5rem;
+}
+</style>
