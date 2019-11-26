@@ -1,16 +1,18 @@
 <template>
   <div>
     <PostPageHeader :post="post" />
+    <FlexibleContent :post="post" />
     <TemporaryPostData :data="post" />
   </div>
 </template>
 
 <script>
+import FlexibleContent from '~/components/AcfBlocks/FlexibleContent.vue';
 import TemporaryPostData from '~/components/TemporaryPostData.vue';
 import { postMeta } from '~/utilities/yoastHelpers';
 
 export default {
-  components: { TemporaryPostData },
+  components: { FlexibleContent, TemporaryPostData },
   data: () => ({ post: {} }),
   head() {
     return this.post ? postMeta(this.post) : {};

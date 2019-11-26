@@ -13,10 +13,10 @@ import BaseButton from '~/components/Form/Button/Base/BaseButton';
 import BaseTitle from '~/components/Typography/Title/BaseTitle';
 import BaseContent from '~/components/Typography/Content/BaseContent';
 import StripSpace from '~/components/Layout/Spacing/StripSpace';
-import BasePageHeader from '~/components/PageBlocks/PageHeader/BasePageHeader';
+import BasePageHeader from '~/components/AcfBlocks/PageHeader/BasePageHeader';
 
-import PostPageHeader from '~/components/PageBlocks/PageHeader/PostPageHeader';
-import BaseWysiwyg from '~/components/PageBlocks/BaseWysiwyg';
+import PostPageHeader from '~/components/AcfBlocks/PageHeader/PostPageHeader';
+import BaseWysiwyg from '~/components/AcfBlocks/BaseWysiwyg';
 import ImageObject from '~/components/Visual/Images/ImageObject.vue';
 
 Vue.component('Box', Box);

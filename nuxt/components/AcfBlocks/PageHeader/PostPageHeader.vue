@@ -2,7 +2,7 @@
   <BasePageHeader
     :title="post.acf.title_override || post.title.rendered"
     :body="post.acf.header_text"
-    :image-object="post.acf.header_image"
+    :image-object="post.acf.header_image || null"
   />
 </template>
 
