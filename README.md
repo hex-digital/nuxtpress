@@ -29,6 +29,7 @@ Check out [the documentation directory](docs) for more detailed information on N
 - [Development Tools](docs/3-DevelopmentTools.md#development-tools)
   - [StoryBook](docs/3-DevelopmentTools.md#storybook)
   - [SCSS](docs/3-DevelopmentTools.md#scss)
+  - [Lint Staged Files on Commit](docs/3-DevelopmentTools.md#lint-staged)
   - [Scripts](docs/3-DevelopmentTools.md#scripts)
     - [Working with the containers](docs/3-DevelopmentTools.md#scripts-containers)
       - [WP-CLI and yarn](docs/3-DevelopmentTools.md#scripts-containers-tools)

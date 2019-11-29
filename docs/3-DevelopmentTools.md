@@ -3,6 +3,7 @@
 - [Development Tools](#development-tools)
   - [StoryBook](#storybook)
   - [SCSS](#scss)
+  - [Lint Staged Files on Commit](#lint-staged)
   - [Scripts](#scripts)
     - [Working with the containers](#scripts-containers)
       - [WP-CLI and yarn](#scripts-containers-tools)
@@ -58,6 +59,22 @@ so with the following steps:
 - `yarn remove @nuxtjs/style-resources`
 - Delete the `styleResources` object from nuxt.config.js
 - Remove `@nuxtjs/style-resources` from the `modules` object in nuxt.config.js
+
+### Lint Staged Files on Commit
+
+<a name="lint-staged"/>
+
+We've added Husky to allow the easy creation of scripts that run on git hooks, like pre-commit.
+
+We've also added lint-staged, to allow the linting of just files that are added to the staging area.
+
+The combination of the two allows us to add a pre-commit hook that lints all the staged files with eslint, and prevents
+the commit from being made if they fail. 
+
+**Remove Husky and Lint Staged**
+
+- `yarn remove husky lint-staged`
+- Delete the `husky` and `lint-staged` keys from package.json
 
 ### Scripts
 
