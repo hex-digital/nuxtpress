@@ -41,8 +41,8 @@ Check out [the documentation directory](docs) for more detailed information on N
 
 <a name="quick"/>
 
-    git clone https://github.com/hex-digital/molbio.git
-    cd molbio
+    git clone https://github.com/hex-digital/nuxtpress.git
+    cd nuxtpress
     docker-compose up -d
     cd nuxt && yarn install && yarn dev
 
