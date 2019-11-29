@@ -78,5 +78,5 @@ This allows you to skip all the backend coding, but provides the flexibility to 
 
 <a name="cred"/>
 
-[@northosts](https://github.com/northosts/wuxt) for the fantastic Wuxt framework on which NuxtPress is hugely dependent.  
+[@northosts](https://github.com/northosts) for the fantastic Wuxt framework on which NuxtPress is hugely dependent. [https://github.com/northosts/wuxt](https://github.com/northosts/wuxt)  
 [@yashha](https://github.com/yashha/wp-nuxt/commits?author=yashha) for the excellent idea with the `$wp` object, first implemented in [https://github.com/yashha/wp-nuxt](https://github.com/yashha/wp-nuxt)
