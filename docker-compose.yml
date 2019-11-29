@@ -1,36 +1,36 @@
 version: '2.1'
 services:
-    mysql.nuxtpress:
-        container_name: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
-        image: mysql:5.7
-        volumes:
-            - ./_db:/var/lib/mysql:delegated
-        environment:
-            MYSQL_ROOT_PASSWORD: dev
-        networks:
-          - default
+  mysql.nuxtpress:
+    container_name: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
+    image: mysql:5.7
+    volumes:
+      - ./_db:/var/lib/mysql:delegated
+    environment:
+      MYSQL_ROOT_PASSWORD: dev
+    networks:
+      - default
 
-    wp.nuxtpress:
-        container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
-        image: wordpress:5.3.0-php7.3-apache
-        volumes:
-          - ./wp-content:/var/www/html/wp-content:delegated
-        expose:
-          - '${NUXTPRESS_WP_PORT:-3080}'
-        ports:
-          - '${NUXTPRESS_WP_PORT:-3080}:80'
-        environment:
-          WORDPRESS_DB_HOST: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}:3306
-          WORDPRESS_DB_NAME: nuxtpress
-          WORDPRESS_DB_USER: root
-          WORDPRESS_DB_PASSWORD: dev
-          NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
-          WORDPRESS_CONFIG_EXTRA: |
-            define('WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
-            define('WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
-            define('WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
-        networks:
-          - default
+  wp.nuxtpress:
+    container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
+    image: wordpress:5.3.0-php7.3-apache
+    volumes:
+      - ./wp-content:/var/www/html/wp-content:delegated
+    expose:
+      - '${NUXTPRESS_WP_PORT:-3080}'
+    ports:
+      - '${NUXTPRESS_WP_PORT:-3080}:80'
+    environment:
+      WORDPRESS_DB_HOST: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}:3306
+      WORDPRESS_DB_NAME: nuxtpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: dev
+      NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
+        define('WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
+        define('WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+    networks:
+      - default
 
 #    front.nuxtpress:
 #        container_name: ${NUXTPRESS_NUXT_CONTAINER:-front.nuxtpress}
@@ -39,7 +39,7 @@ services:
 #        environment:
 #            - HOST=0.0.0.0
 #            - NUXTPRESS_WP_CONTAINER=${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
-#            - NUXTPRESS_URL_WP=${NUXTPRESS_URL_WP:-http://localhost:3000}
+#            - NUXTPRESS_WP_URL=${NUXTPRESS_WP_URL:-http://localhost:3080}
 #            - NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080}
 #        ports:
 #            - '${NUXTPRESS_PORT_FRONTEND:-3000}:3000'
@@ -51,4 +51,4 @@ services:
 #          - default
 
 networks:
-    default:
+  default:
