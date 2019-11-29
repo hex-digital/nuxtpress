@@ -3,18 +3,20 @@
 **NuxtPress** combines [**_WordPress_**](https://wordpress.com/), the worlds biggest CMS with [**_NuxtJS_**](https://nuxtjs.org/),
 a brilliant front-end application framework, built on top of [**_Vue_**](https://vuejs.org/v2/guide/).
 
-Check out [the documentation directory](docs) for information on how to setup and use NuxtPress.
+This README contains the quick start and intro documentation.  
+Check out [the documentation directory](docs) for more detailed information on NuxtPress.
 
+- [Quick Start](#quick)
 - [Introduction](#intro)
 - [Getting started](docs/1-GettingStarted.md#start)
   - [With Docker](docs/1-GettingStarted.md#with-docker)
     - [Setup WordPress](docs/1-GettingStarted.md#setup-wp)
-    - [Setup Nuxt.js](docs/1-GettingStarted.md#setup-nuxt-docker)  
+    - [Setup Nuxt.js](docs/1-GettingStarted.md#setup-nuxt-docker)
     - [Custom container configuration](docs/1-GettingStarted.md#custom-container-configuration)
   - [Without Docker](docs/1-GettingStarted.md#without-docker)
     - [Setup WordPress](docs/1-GettingStarted.md#setup-wp-no-docker)
-    - [Setup Nuxt.js](docs/1-GettingStarted.md#setup-nuxt-no-docker)  
-    - [Port Configuration](docs/1-GettingStarted.md#port-config)
+    - [Setup Nuxt.js](docs/1-GettingStarted.md#setup-nuxt-no-docker)
+    - [URL and Port Configuration](docs/1-GettingStarted.md#port-config)
 - [WordPress Rest API endpoints](docs/2-WordPressRestApi.md#ep)
   - [Extensions to the API endpoints](docs/2-WordPressRestApi.md#epp)
     - [Front-page](docs/2-WordPressRestApi.md#epp-front)
@@ -28,13 +30,14 @@ Check out [the documentation directory](docs) for information on how to setup an
   - [StoryBook](docs/3-DevelopmentTools.md#storybook)
   - [Scripts](docs/3-DevelopmentTools.md#scripts)
     - [Working with the containers](docs/3-DevelopmentTools.md#scripts-containers)
-        - [WP-CLI and yarn](docs/3-DevelopmentTools.md#scripts-containers-tools)
+      - [WP-CLI and yarn](docs/3-DevelopmentTools.md#scripts-containers-tools)
     - [Scaffolding](docs/3-DevelopmentTools.md#scripts-scaffolding)
-- [Generate and Deploy](docs/4-GenerateStaticSite#deploy)
+- [Generate and Deploy](docs/4-GenerateStaticSite.md#deploy)
 - [Links](#links)
 - [Credits](#cred)
 
 ## Quick start
+
 <a name="quick"/>
 
     git clone https://github.com/hex-digital/molbio.git
@@ -43,11 +46,12 @@ Check out [the documentation directory](docs) for information on how to setup an
     cd nuxt && yarn dev
 
 - [http://localhost:3080/install.php](http://localhost:3080/install.php) - Install WordPress
-- [http://localhost:3080/wp-admin/options-permalink.php](http://localhost:3080/wp-admin/options-permalink.php) - Set permalinks to *Post name*
+- [http://localhost:3080/wp-admin/options-permalink.php](http://localhost:3080/wp-admin/options-permalink.php) - Set permalinks to _Post name_
 - [http://localhost:3080/wp-admin/themes.php](http://localhost:3080/wp-admin/themes.php) - Activate **nuxtpress**-theme
 - [http://localhost:3000](http://localhost:3000) - Done
 
 ## Introduction
+
 <a name="intro"/>
 
 NuxtPress aims to provide a ready to use development environment, combining WordPress with Nuxt.
@@ -62,11 +66,13 @@ Included are:
 This allows you to skip all the backend coding, but provides the flexibility to extend the backend if you want to.
 
 ## Links
+
 <a name="links"/>
 
 [WUXT Headless WordPress API Extensions](https://wordpress.org/plugins/wuxt-headless-wp-api-extensions/): Plugin which includes all our API extensions.
 
 ## Credits
+
 <a name="cred"/>
 
 [@northosts](https://github.com/northosts/wuxt) for the fantastic Wuxt framework on which NuxtPress is hugely dependent.
