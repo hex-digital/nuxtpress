@@ -68,6 +68,13 @@ export default class AcfImage {
     return this.alt;
   }
 
+  /**
+   * @returns {string|null}
+   */
+  getCaption() {
+    return this.caption;
+  }
+
   getThemeSizes() {
     return getThemeSizes();
   }
