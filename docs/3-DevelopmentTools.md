@@ -2,6 +2,7 @@
 
 - [Development Tools](#development-tools)
   - [StoryBook](#storybook)
+  - [SCSS](#scss)
   - [Scripts](#scripts)
     - [Working with the containers](#scripts-containers)
       - [WP-CLI and yarn](#scripts-containers-tools)
@@ -33,6 +34,30 @@ Stories can be created in the `nuxt/stories` directory. They can be accessed by 
     # Not using docker
     cd nuxt
     yarn storybook
+
+### SCSS
+
+<a name="scss"/>
+
+SCSS comes pre-integrated with Nuxt. On top of this, we have added the **styleResources** plugin for injecting variables,
+mixins and functions into all Vue components.
+
+We also include the barebones [**InuitCSS**](https://github.com/inuitcss/inuitcss) framework by default, which adds
+helpful project configuration, mixins, functions and objects. Visit the GitHub page to learn more.
+
+If you'd like to work with these, then you're ready to go. However, if you'd like to remove these elements, you can do
+so with the following steps:
+
+**Remove InuitCSS**
+
+- `yarn remove inuitcss inuitcss-hex`
+- Delete all files from the `assets/scss` directory
+
+**Remove style resources**
+
+- `yarn remove @nuxtjs/style-resources`
+- Delete the `styleResources` object from nuxt.config.js
+- Remove `@nuxtjs/style-resources` from the `modules` object in nuxt.config.js
 
 ### Scripts
 

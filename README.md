@@ -28,6 +28,7 @@ Check out [the documentation directory](docs) for more detailed information on N
     - [Custom post types](docs/2-WordPressRestApi.md#epp-cpt)
 - [Development Tools](docs/3-DevelopmentTools.md#development-tools)
   - [StoryBook](docs/3-DevelopmentTools.md#storybook)
+  - [SCSS](docs/3-DevelopmentTools.md#scss)
   - [Scripts](docs/3-DevelopmentTools.md#scripts)
     - [Working with the containers](docs/3-DevelopmentTools.md#scripts-containers)
       - [WP-CLI and yarn](docs/3-DevelopmentTools.md#scripts-containers-tools)
@@ -75,5 +76,5 @@ This allows you to skip all the backend coding, but provides the flexibility to 
 
 <a name="cred"/>
 
-[@northosts](https://github.com/northosts/wuxt) for the fantastic Wuxt framework on which NuxtPress is hugely dependent.
+[@northosts](https://github.com/northosts/wuxt) for the fantastic Wuxt framework on which NuxtPress is hugely dependent.  
 [@yashha](https://github.com/yashha/wp-nuxt/commits?author=yashha) for the excellent idea with the `$wp` object, first implemented in [https://github.com/yashha/wp-nuxt](https://github.com/yashha/wp-nuxt)
