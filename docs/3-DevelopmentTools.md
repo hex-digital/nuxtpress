@@ -2,6 +2,7 @@
 
 - [Development Tools](#development-tools)
   - [StoryBook](#storybook)
+  - [Jest (Unit + Snapshot Testing)](#jest)
   - [SCSS](#scss)
   - [Lint Staged Files on Commit](#lint-staged)
   - [Scripts](#scripts)
@@ -35,6 +36,14 @@ Stories can be created in the `nuxt/stories` directory. They can be accessed by 
     # Not using docker
     cd nuxt
     yarn storybook
+
+### Jest (Unit + Snapshot Testing)
+
+<a name="jest"/>
+
+Jest comes pre-configured out of the box with Nuxt, and so it is included with this project.
+
+Everything should feel familiar, so you can continue building great, robust things.
 
 ### SCSS
 
