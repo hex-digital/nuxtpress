@@ -1,6 +1,5 @@
 <template>
   <div>
-    <PostPageHeader :post="post" />
     <TemporaryPostData :data="post" />
   </div>
 </template>
