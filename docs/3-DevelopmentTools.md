@@ -154,7 +154,7 @@ parameters as arguments. If you don't pass arguments, you will get prompted.
     yarn run scaffold:cpt
     yarn run scaffold:cpt Movie
 
-The custom post type definition is created in the `cpts` folder of the NuxtPress theme. It is then loaded automatically
+The custom post type definition is created in the `custom-post-types` folder of the NuxtPress theme. It is then loaded automatically
 by the theme.
 
 > Note: To query the new post-type you can use the `cpt` method of the **NuxtPress** `$wp` object.

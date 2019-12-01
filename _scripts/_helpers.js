@@ -182,7 +182,7 @@ module.exports = {
       exec('docker exec ' + container + ' bash -c \'wp --allow-root scaffold post-type ' + slug + ' --label=' + result.name + ' --textdomain=nuxtpress\'', function(error, stdout, stderr) {
         if (!error) {
 
-          mkdirp('./wp-content/themes/nuxtpress/cpts', function (err) {
+          mkdirp('./wp-content/themes/nuxtpress/custom-post-types', function (err) {
             if (err) {
               console.log('ERROR: Could not create post-type (' + err + ').')
               return;
@@ -190,7 +190,7 @@ module.exports = {
 
             stdout = stdout.replace('\'title\', \'editor\'', '\'title\', \'editor\', \'custom-fields\'')
 
-            fs.writeFile('./wp-content/themes/nuxtpress/cpts/' + slug + '.php', stdout, function(err) {
+            fs.writeFile('./wp-content/themes/nuxtpress/custom-post-types/' + slug + '.php', stdout, function(err) {
               if (err) {
                 console.log('ERROR: Could not create post-type (' + err + ').')
                 return;
