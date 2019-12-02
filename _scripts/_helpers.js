@@ -188,7 +188,10 @@ module.exports = {
               return;
             }
 
-            stdout = stdout.replace('\'title\', \'editor\'', '\'title\', \'editor\', \'custom-fields\'')
+            stdout = stdout.replace(
+                "'title', 'editor'",
+                "'title', 'editor', 'custom-fields', 'revisions'"
+            )
 
             fs.writeFile('./wp-content/themes/nuxtpress/custom-post-types/' + slug + '.php', stdout, function(err) {
               if (err) {
