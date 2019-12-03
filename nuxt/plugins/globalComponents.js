@@ -12,10 +12,9 @@ import Stack from '~/components/Primitives/Stack/Stack';
 import BaseButton from '~/components/Form/Button/Base/BaseButton';
 import BaseTitle from '~/components/Typography/Title/BaseTitle';
 import BaseContent from '~/components/Typography/Content/BaseContent';
-import StripSpace from '~/components/Layout/Spacing/StripSpace';
-import BasePageHeader from '~/components/AcfBlocks/PageHeader/BasePageHeader';
 
-import PostPageHeader from '~/components/AcfBlocks/PageHeader/PostPageHeader';
+import WpLink from '~/components/Functional/wp-link';
+
 import BaseWysiwyg from '~/components/AcfBlocks/BaseWysiwyg';
 import ImageObject from '~/components/Visual/Images/ImageObject.vue';
 
@@ -30,10 +29,7 @@ Vue.component('BaseButton', BaseButton);
 Vue.component('BaseTitle', BaseTitle);
 Vue.component('BaseContent', BaseContent);
 
-Vue.component('StripSpace', StripSpace);
+Vue.component('WpLink', WpLink);
 
-Vue.component('BasePageHeader', BasePageHeader);
-
-Vue.component('PostPageHeader', PostPageHeader);
 Vue.component('BaseWysiwyg', BaseWysiwyg);
 Vue.component('ImageObject', ImageObject);
