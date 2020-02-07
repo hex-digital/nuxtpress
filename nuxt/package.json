@@ -10,12 +10,14 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "style": "yarn stylelint 'assets/scss/**/*.(s?(a|c)ss|vue)' 'components/**/*.(s?(a|c)ss|vue)' --syntax scss",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint"
+    "*.{js,vue,scss}": "stylelint --syntax=scss",
+    "*.{js,vue}": "eslint --fix"
   },
   "husky": {
     "hooks": {
@@ -24,6 +26,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
     "axios": "^0.19.0",
@@ -32,13 +35,16 @@
     "node-sass": "^4.12.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.0",
+    "vuejs-logger": "^1.5.4",
     "wpapi": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/runtime-corejs3": "^7.6.3",
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.3.0",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^3.2.1",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-backgrounds": "^5.2.5",
     "@storybook/addon-centered": "^5.2.5",
@@ -61,6 +67,10 @@
     "lint-staged": "^8.2.1",
     "prettier": "^1.16.4",
     "sass-resources-loader": "^2.0.1",
+    "stylelint": "^13.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.14.2",
     "vue-jest": "^4.0.0-0"
   }
 }

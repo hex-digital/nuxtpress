@@ -16,5 +16,18 @@ module.exports = {
       '~': rootPath,
       '~~': rootPath,
     },
+    extensions: [
+      '.sass',
+      '.scss',
+      '.css',
+      '.wasm',
+      '.web.js',
+      '.mjs',
+      '.js',
+      '.json',
+      '.web.jsx',
+      '.jsx',
+      '.vue',
+    ],
   },
 };

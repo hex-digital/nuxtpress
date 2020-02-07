@@ -1,12 +1,18 @@
 import axios from 'axios';
+import { build } from './config';
+require('dotenv').config();
 
+const debug = process.env.NUXTPRESS_NUXT_DEBUG ? process.env.NUXTPRESS_NUXT_DEBUG : false;
 const wpUrl = process.env.NUXTPRESS_WP_URL ? process.env.NUXTPRESS_WP_URL : 'http://localhost:3080';
 
 export default {
-  debug: true,
+  debug,
   mode: 'universal',
   env: {
+    nuxtDebug: debug,
+    nuxtFrontUrl: process.env.NUXTPRESS_FRONT_URL || 'localhost:3000',
     NUXTPRESS_WP_PORT: process.env.NUXTPRESS_WP_PORT || '3080',
+    NUXTPRESS_WP_URL: wpUrl,
   },
   /*
    ** Headers of the page
@@ -33,13 +39,21 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/globalComponents.js', { src: '~/plugins/wp-api-docker-connector', ssr: false }],
+  plugins: [
+    '~/plugins/global-components.js',
+    '~/plugins/vue-logger.js',
+    { src: '~/plugins/wp-api-docker-connector', ssr: false },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    // Doc:https://github.com/nuxt-community/stylelint-module
+    ['@nuxtjs/stylelint-module', { syntax: 'scss' }],
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    ['@nuxtjs/dotenv', { filename: '.env' }],
   ],
   /*
    ** Nuxt.js modules
@@ -66,28 +80,7 @@ export default {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      if (ctx.isDev) {
-        // Allow nicer debugging for the SSR parts of the app by inlining the source maps
-        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
-      }
-    },
-    babel: {
-      presets({ isServer }) {
-        return [
-          [
-            require.resolve('@nuxt/babel-preset-app'),
-            {
-              buildTarget: isServer ? 'server' : 'client',
-              corejs: { version: 3 },
-            },
-          ],
-        ];
-      },
-    },
+    ...build,
   },
   generate: {
     routes: () => {
