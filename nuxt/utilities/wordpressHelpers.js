@@ -20,3 +20,7 @@ export function getThemeSizes() {
 export function getPreferredSizeFallbackOrder() {
   return ['medium_large', 'large', '1536x1536', 'medium', '2048x2048', 'thumbnail'];
 }
+
+export function stripWordPressDomainFromUrl(url) {
+  return url.replace(process.env.NUXTPRESS_WP_URL, '');
+}

@@ -266,7 +266,7 @@ $button-type-theme-maps: (
     color: transparent;
   }
 
-  &::after {
+  &:after {
     animation: animSpin 0.5s infinite linear;
     border-radius: 50%;
     border: 2px solid currentColor;

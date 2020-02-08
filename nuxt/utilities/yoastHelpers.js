@@ -10,7 +10,7 @@ export function postMeta(post) {
   const jsonLd = createJsonLdMeta(updateUrls(getPostJsonLd(post)));
 
   if (title) {
-    postMeta.title = title;
+    postMeta.title = title.replace('&amp;', '&');
   }
   if (meta) {
     postMeta.meta = meta;
@@ -57,7 +57,6 @@ function getPostJsonLd(post) {
  * @return {*}
  */
 function updateUrls(meta) {
-  // @todo Add implementation for find/replacing all the URLs that match the WP API URL (e.g. localhost:3080).
   return meta;
 }
 

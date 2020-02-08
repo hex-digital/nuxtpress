@@ -18,6 +18,8 @@ export default (ctx, inject) => {
   registerMenu(wp);
   registerSlug(wp);
   registerCPT(wp);
+  registerOptions(wp);
+  registerTaxonomy(wp);
 
   /**
    * Inject

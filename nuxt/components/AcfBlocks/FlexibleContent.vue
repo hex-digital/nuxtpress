@@ -56,10 +56,10 @@ export default {
    * for those that need different spacings than the default.
    * Remember the rules cascade, so more general rules at the top, and more specific rules at the bottom.
    */
-  & > * + * {
+  > * + * {
     margin-top: 1rem;
   }
-  & > * + .v-fc-title-block {
+  > * + .v-fc-title-block {
     margin-top: 4.5rem;
   }
 }

@@ -1,6 +1,10 @@
 import WpMenuItem from '~/models/WordPress/WpMenuItem';
 
 /**
+ * Grabs the navigational menus once on serverside render, and stores them in here for use.
+ */
+
+/**
  * The mutation types available to this store module.
  * @type {Object<string>}
  */
