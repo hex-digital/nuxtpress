@@ -12,6 +12,27 @@ add_filter( 'preview_page_link', 'nuxtpress_headless_preview_link' );
 add_filter( 'rest_prepare_post', 'nuxtpress_preview_link_in_rest_response', 10, 2 );
 add_filter( 'rest_prepare_page', 'nuxtpress_preview_link_in_rest_response', 10, 2 );
 
+add_action( 'init', 'nuxtpress_remove_comment_support', 100 );
+add_action( 'admin_menu', 'nuxtpress_remove_admin_menus' );
+add_action( 'wp_before_admin_bar_render', 'nuxtpress_admin_bar_render' );
+
+/** Remove comments from Admin Menu */
+function nuxtpress_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+/** Remove comments from posts and pages */
+function nuxtpress_remove_comment_support() {
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+
+/** Remove comments from admin bar */
+function nuxtpress_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+
 /**
  * By default, in Add/Edit Post, WordPress moves checked categories to the top of the list and unchecked to the bottom.
  * When you have subcategories that you want to keep below their parents at all times, this makes no sense.

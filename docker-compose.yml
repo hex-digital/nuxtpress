@@ -1,4 +1,5 @@
-version: '2.1'
+version: '3'
+
 services:
   mysql.nuxtpress:
     container_name: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
@@ -12,26 +13,33 @@ services:
 
   wp.nuxtpress:
     container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
-    image: wordpress:5.3.0-php7.3-apache
+    image: wordpress:5.3.2-php7.3-apache
     volumes:
       - ./wp-content:/var/www/html/wp-content:delegated
+      - ./_scripts/docker-wordpress-setup.sh:/usr/local/bin/docker-wordpress-setup
     expose:
       - '${NUXTPRESS_WP_PORT:-3080}'
     ports:
       - '${NUXTPRESS_WP_PORT:-3080}:80'
     environment:
-      WORDPRESS_DB_HOST: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}:3306
-      WORDPRESS_DB_NAME: nuxtpress
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: dev
+      WORDPRESS_DB_HOST: ${NUXTPRESS_WP_DB_HOST:-mysql.nuxtpress:3306}
+      WORDPRESS_DB_NAME: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
+      WORDPRESS_DB_USER: ${NUXTPRESS_WP_DB_USER:-root}
+      WORDPRESS_DB_PASSWORD: ${NUXTPRESS_WP_DB_PASSWORD:-dev}
       NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
+      WORDPRESS_DEBUG: ${NUXTPRESS_WP_DEBUG:-1}
       WORDPRESS_CONFIG_EXTRA: |
-        define('WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
-        define('WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
-        define('WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+        define( 'WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
+        define( 'WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
+        define( 'WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+        define( 'DISALLOW_FILE_EDIT', true );
+        define( 'WP_DEBUG_DISPLAY', true );
+        define( 'WP_DEBUG_LOG', true );
+        include( ABSPATH . 'wp-content/.env.php' );
     networks:
       - default
 
+# This is turned off by default as Nuxt spins up a development server with ease which is MUCH faster.
 #    front.nuxtpress:
 #        container_name: ${NUXTPRESS_NUXT_CONTAINER:-front.nuxtpress}
 #        image: node:11-slim
@@ -49,6 +57,9 @@ services:
 #        command: bash -c "yarn install && NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080} yarn dev"
 #        networks:
 #          - default
-
+volumes:
+  _db:
+  wp-content:
+  _scripts:
 networks:
   default:

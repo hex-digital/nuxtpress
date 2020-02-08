@@ -7,6 +7,8 @@
 
 require_once 'inc/frontend-origin.php';
 
+require_once 'inc/acf-options.php';
+
 require_once 'inc/admin.php';
 
 require_once 'inc/theme.php';
