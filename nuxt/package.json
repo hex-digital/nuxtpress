@@ -17,7 +17,10 @@
   },
   "lint-staged": {
     "*.{js,vue,scss}": "stylelint --syntax=scss",
-    "*.{js,vue}": "eslint --fix"
+    "*.{js,vue}": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests"
+    ]
   },
   "husky": {
     "hooks": {
@@ -42,7 +45,7 @@
     "@babel/core": "^7.6.4",
     "@babel/runtime-corejs3": "^7.6.3",
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.3.0",
-    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/stylelint-module": "^3.2.1",
     "@storybook/addon-actions": "^5.2.5",

@@ -1,5 +1,5 @@
 <template>
-  <BaseTypography v-bind="$attrs" type="content" :tag="tag">
+  <BaseTypography v-bind="$attrs" :tag="tag" type="content">
     <slot />
   </BaseTypography>
 </template>

@@ -7,7 +7,7 @@ import centered from '@storybook/addon-centered/vue';
 
 import '~/assets/scss/app.scss';
 import './story-styles.css';
-import '~/plugins/globalComponents';
+import '~/plugins/global-components';
 
 addParameters({
   backgrounds: [{ name: 'light', value: '#eeeeee' }, { name: 'dark', value: '#222222' }],

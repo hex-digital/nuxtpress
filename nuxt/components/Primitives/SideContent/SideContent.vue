@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
-$defaultSpacing = 1.5rem; // @todo This should come from the modular sizings
+$defaultSpacing: 1.5rem; // @todo This should come from the modular sizings
 
 .o-side-content > * {
   display: flex;
