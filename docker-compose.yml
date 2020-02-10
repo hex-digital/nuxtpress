@@ -3,20 +3,27 @@ version: '3'
 services:
   mysql.nuxtpress:
     container_name: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
-    image: mysql:5.7
+    image: mariadb
+    restart: unless-stopped
     volumes:
       - ./_db:/var/lib/mysql:delegated
     environment:
-      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
+      MYSQL_DATABASE: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
+      MYSQL_USER: ${NUXTPRESS_WP_DB_USER:-dev}
+      MYSQL_PASSWORD: ${NUXTPRESS_WP_DB_PASSWORD:-dev}
     networks:
       - default
+
 
   wp.nuxtpress:
     container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
     image: wordpress:5.3.2-php7.3-apache
+    restart: unless-stopped
+    depends_on:
+      - ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
     volumes:
       - ./wp-content:/var/www/html/wp-content:delegated
-      - ./_scripts/docker-wordpress-setup.sh:/usr/local/bin/docker-wordpress-setup
     expose:
       - '${NUXTPRESS_WP_PORT:-3080}'
     ports:
@@ -24,7 +31,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: ${NUXTPRESS_WP_DB_HOST:-mysql.nuxtpress:3306}
       WORDPRESS_DB_NAME: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
-      WORDPRESS_DB_USER: ${NUXTPRESS_WP_DB_USER:-root}
+      WORDPRESS_DB_USER: ${NUXTPRESS_WP_DB_USER:-dev}
       WORDPRESS_DB_PASSWORD: ${NUXTPRESS_WP_DB_PASSWORD:-dev}
       NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
       WORDPRESS_DEBUG: ${NUXTPRESS_WP_DEBUG:-1}
@@ -57,9 +64,6 @@ services:
 #        command: bash -c "yarn install && NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080} yarn dev"
 #        networks:
 #          - default
-volumes:
-  _db:
-  wp-content:
-  _scripts:
+
 networks:
   default:
