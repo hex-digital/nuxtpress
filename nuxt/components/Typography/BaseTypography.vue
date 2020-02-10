@@ -6,7 +6,7 @@
 
 <script>
 const availableColors = ['primary', 'secondary', 'white', 'black']; // Should come from settings.colors theme map
-const availableSizes = [null, 'massive', 'huge', 'large', 'small']; // Should come from settings.text sizing map
+const availableSizes = ['small', 'base', 'large', 'huge', 'massive']; // Should come from settings.text sizing map
 const availableTypes = ['title', 'content'];
 
 export default {

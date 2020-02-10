@@ -1,5 +1,5 @@
 <template>
-  <div class="o-box" :style="boxStyles">
+  <div :style="boxStyles" class="o-box">
     <slot />
   </div>
 </template>
@@ -31,6 +31,7 @@ $defaultPadding: 1.5rem; // @todo This should be a modular sizing
   border-width: $defaultBorderWidth;
   display: block;
   padding: $defaultPadding;
+
   /* ↓ For high contrast mode */
   outline: $defaultBorderWidth solid transparent;
   outline-offset: calc(#{$defaultBorderWidth} * -1);

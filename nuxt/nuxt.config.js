@@ -29,12 +29,12 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['assets/scss/app.scss'],
+  css: ['~/assets/scss/app.scss'],
   /*
    ** StyleResources: SCSS to load in all Vue components - don't load any outputted CSS here, just settings + tools
    */
   styleResources: {
-    scss: ['assets/scss/settings-tools.scss'],
+    scss: ['~/assets/scss/settings-tools.scss'],
   },
   /*
    ** Plugins to load before mounting the App
@@ -54,6 +54,8 @@ export default {
     ['@nuxtjs/stylelint-module', { syntax: 'scss' }],
     // Doc: https://github.com/nuxt-community/dotenv-module
     ['@nuxtjs/dotenv', { filename: '.env' }],
+    // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Nuxt.js modules
@@ -62,7 +64,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
     '~/modules/static/',
     [
       '~/modules/wp-api/index',

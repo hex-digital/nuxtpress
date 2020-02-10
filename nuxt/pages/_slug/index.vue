@@ -12,10 +12,6 @@ import { postMeta } from '~/utilities/yoastHelpers';
 
 export default {
   components: { FlexibleContent, TemporaryPostData },
-  data: () => ({ post: {} }),
-  head() {
-    return this.post ? postMeta(this.post) : {};
-  },
   async asyncData({ app, error, params }) {
     try {
       const data = await app.$wp
@@ -28,6 +24,10 @@ export default {
       const message = e.message || 'There has been a problem retrieving data from the API';
       error({ statusCode, message });
     }
+  },
+  data: () => ({ post: {} }),
+  head() {
+    return this.post ? postMeta(this.post) : {};
   },
 };
 </script>
