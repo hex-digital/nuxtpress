@@ -7,6 +7,8 @@ import registerFrontPage from '~/modules/wp-api/routes/front-page';
 import registerMenu from '~/modules/wp-api/routes/menu';
 import registerSlug from '~/modules/wp-api/routes/slug';
 import registerCPT from '~/modules/wp-api/routes/cpt';
+import registerOptions from '~/modules/wp-api/routes/options';
+import registerTaxonomy from '~/modules/wp-api/routes/taxonomy';
 
 const wp = new WPApi(<%= serialize(options) %>);
 

@@ -16,7 +16,7 @@
       <BaseTitle class="u-margin-bottom-zero" size="large">{{ statusCode }}</BaseTitle>
     </div>
 
-    <BaseTitle tag="h2" size="medium" class="u-margin-bottom-zero">We can't seem to find this page</BaseTitle>
+    <BaseTitle tag="h2" size="large" class="u-margin-bottom-zero">We can't seem to find this page</BaseTitle>
     <BaseText>({{ errorUrl }})</BaseText>
     <BaseTitle class="u-margin-bottom-zero" size="base">
       Did you follow a link from another page on {{ frontUrl }}?

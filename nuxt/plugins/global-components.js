@@ -9,14 +9,14 @@ import Cluster from '~/components/Primitives/Cluster/Cluster';
 import Content from '~/components/Primitives/Content/Content';
 import Cover from '~/components/Primitives/Cover/Cover';
 import Stack from '~/components/Primitives/Stack/Stack';
-import BaseButton from '~/components/Form/Button/Base/BaseButton';
+import BaseButton from '~/components/BaseButton';
 import BaseTitle from '~/components/Typography/Title/BaseTitle';
 import BaseContent from '~/components/Typography/Content/BaseContent';
 
 import WpLink from '~/components/Functional/wp-link';
 
 import BaseWysiwyg from '~/components/AcfBlocks/BaseWysiwyg';
-import ImageObject from '~/components/Visual/Images/ImageObject.vue';
+import ImageObject from '~/components/ImageObject.vue';
 
 Vue.component('Box', Box);
 Vue.component('Cluster', Cluster);
