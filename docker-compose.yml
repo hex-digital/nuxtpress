@@ -3,18 +3,17 @@ version: '3'
 services:
   mysql.nuxtpress:
     container_name: ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
-    image: mariadb
+    image: mariadb:10.4.12
     restart: unless-stopped
     volumes:
       - ./_db:/var/lib/mysql:delegated
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: yes
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       MYSQL_DATABASE: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
       MYSQL_USER: ${NUXTPRESS_WP_DB_USER:-dev}
       MYSQL_PASSWORD: ${NUXTPRESS_WP_DB_PASSWORD:-dev}
     networks:
       - default
-
 
   wp.nuxtpress:
     container_name: ${NUXTPRESS_WP_CONTAINER:-wp.nuxtpress}
