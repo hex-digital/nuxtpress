@@ -28,19 +28,23 @@ services:
     ports:
       - '${NUXTPRESS_WP_PORT:-3080}:80'
     environment:
-      WORDPRESS_DB_HOST: ${NUXTPRESS_WP_DB_HOST:-mysql.nuxtpress:3306}
-      WORDPRESS_DB_NAME: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
+      NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
+      WORDPRESS_DB_HOST: ${NUXTPRESS_WP_DB_HOST:-mysql.nuxtpress}
       WORDPRESS_DB_USER: ${NUXTPRESS_WP_DB_USER:-dev}
       WORDPRESS_DB_PASSWORD: ${NUXTPRESS_WP_DB_PASSWORD:-dev}
-      NUXTPRESS_WP_PORT: ${NUXTPRESS_WP_PORT:-3080}
+      WORDPRESS_DB_NAME: ${NUXTPRESS_WP_DB_NAME:-nuxtpress}
+      WORDPRESS_TABLE_PREFIX: ${NUXTPRESS_WP_TABLE_PREFIX:-np_}
       WORDPRESS_DEBUG: ${NUXTPRESS_WP_DEBUG:-1}
       WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+
         define( 'WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
         define( 'WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
-        define( 'WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+
         define( 'DISALLOW_FILE_EDIT', true );
         define( 'WP_DEBUG_DISPLAY', true );
         define( 'WP_DEBUG_LOG', true );
+
         include( ABSPATH . 'wp-content/.env.php' );
     networks:
       - default
