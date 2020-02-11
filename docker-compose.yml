@@ -63,6 +63,9 @@ services:
 #        command: bash -c "yarn install && NUXTPRESS_WP_PORT=${NUXTPRESS_WP_PORT:-3080} yarn dev"
 #        networks:
 #          - default
-
+volumes:
+  _db:
+  wp-content:
+  .htaccess:
 networks:
   default:
