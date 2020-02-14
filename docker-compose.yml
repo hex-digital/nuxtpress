@@ -70,6 +70,5 @@ services:
 volumes:
   _db:
   wp-content:
-  .htaccess:
 networks:
   default:
