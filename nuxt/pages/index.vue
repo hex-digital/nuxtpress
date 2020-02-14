@@ -17,7 +17,9 @@ export default {
       const data = await app.$wp.frontPage().get();
       return { post: data };
     } catch (e) {
-      error({ statusCode: 500, message: 'There has been a problem retrieving data from the API' });
+      const statusCode = e?.data?.status || 500;
+      const message = e.message || 'There has been a problem retrieving data from the API';
+      error({ statusCode, message });
     }
   },
   data: () => ({ post: {} }),
