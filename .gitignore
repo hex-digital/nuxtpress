@@ -1,10 +1,12 @@
 node_modules
 node_modules/*
 _db
+wp-content/debug.log
 wp-content/themes/twenty*
 wp-content/languages
 wp-content/uploads/*
 wp-content/plugins/*
+wp-content/wflogs/*
 .DS_Store
 nuxt/dist/*
 .env
