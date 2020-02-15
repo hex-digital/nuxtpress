@@ -46,7 +46,7 @@ services:
         define( 'WP_DEBUG_DISPLAY', true );
         define( 'WP_DEBUG_LOG', true );
 
-        include( ABSPATH . 'wp-content/.env.php' );
+        include( ABSPATH . '.env.php' );
     networks:
       - default
 
