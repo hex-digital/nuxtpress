@@ -8,7 +8,7 @@
 import BaseTypography from '~/components/Typography/BaseTypography.vue';
 
 export default {
-  name: 'BaseContent',
+  name: 'BaseText',
   components: { BaseTypography },
   props: {
     tag: { type: String, default: 'p' },

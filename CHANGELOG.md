@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🐛 Bug Fixes 
+- Fix some incorrect naming related to the Typography components [#11](https://github.com/hex-digital/nuxtpress/pull/11)
+- Fix a bug where the FlexibleContent component failed when this.post or this.post.acf was undefined [#11](https://github.com/hex-digital/nuxtpress/pull/11)
+
 ### 🚀 Features  
 - Add support for WordPress templates [#6](https://github.com/hex-digital/nuxtpress/issues/6)
 

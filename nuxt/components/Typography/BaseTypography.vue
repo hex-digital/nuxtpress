@@ -10,7 +10,7 @@ const availableSizes = ['small', 'base', 'large', 'huge', 'massive']; // Should 
 const availableTypes = ['title', 'content'];
 
 export default {
-  name: 'BaseContent',
+  name: 'BaseTypography',
   props: {
     bold: { type: Boolean, default: false },
     color: { type: String, default: 'black', validator: (value) => availableColors.includes(value) },
