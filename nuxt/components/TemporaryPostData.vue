@@ -1,6 +1,6 @@
 <template>
   <div v-if="display">
-    <pre><code>{{ data }}</code></pre>
+    <pre><code>{{ post }}</code></pre>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'TemporaryPostData',
   props: {
-    data: { type: [Array, Object], default: () => ({}) },
+    post: { type: [Array, Object], default: () => ({}) },
   },
   computed: {
     display: () => process.env.NODE_ENV === 'development',
