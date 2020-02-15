@@ -11,7 +11,7 @@ import FlexibleContent from '~/components/AcfBlocks/FlexibleContent.vue';
 import TemporaryPostData from '~/components/TemporaryPostData.vue';
 
 export default {
-  name: 'DefaultTemplate',
+  name: 'ExampleTemplate',
   components: { FlexibleContent, TemporaryPostData },
   props: {
     post: { type: [Array, Object], default: () => ({}) },
