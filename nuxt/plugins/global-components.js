@@ -11,7 +11,7 @@ import Cover from '~/components/Primitives/Cover/Cover';
 import Stack from '~/components/Primitives/Stack/Stack';
 import BaseButton from '~/components/BaseButton';
 import BaseTitle from '~/components/Typography/Title/BaseTitle';
-import BaseContent from '~/components/Typography/Content/BaseContent';
+import BaseText from '~/components/Typography/Text/BaseText';
 
 import WpLink from '~/components/Functional/wp-link';
 
@@ -27,7 +27,7 @@ Vue.component('Stack', Stack);
 Vue.component('BaseButton', BaseButton);
 
 Vue.component('BaseTitle', BaseTitle);
-Vue.component('BaseContent', BaseContent);
+Vue.component('BaseText', BaseText);
 
 Vue.component('WpLink', WpLink);
 
