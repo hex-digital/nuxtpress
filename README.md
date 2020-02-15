@@ -45,7 +45,7 @@ Check out [the documentation directory](docs) for more detailed information on N
 
     git clone https://github.com/hex-digital/nuxtpress.git
     cd nuxtpress
-    docker-compose up -d
+    docker-compose up -d wp.nuxtpress
     cd nuxt && yarn install && yarn dev
 
 - [http://localhost:3080/install.php](http://localhost:3080/install.php) - Install WordPress
