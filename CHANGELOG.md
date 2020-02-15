@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🚨 Breaking Changes
+- Move wp-content into a top level 'wordpress' directory [#13](https://github.com/hex-digital/nuxtpress/issues/13)
+
 ### 🐛 Bug Fixes 
 - Fix some incorrect naming related to the Typography components [#11](https://github.com/hex-digital/nuxtpress/pull/11)
 - Fix a bug where the FlexibleContent component failed when this.post or this.post.acf was undefined [#11](https://github.com/hex-digital/nuxtpress/pull/11)
@@ -44,7 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 For reference:
 
-🌟 Highlights  
+🌟 Highlights
+🚨 Breaking Changes  
 🐛 Bug Fixes  
 🚀 Features  
 🦄️ Improvements
