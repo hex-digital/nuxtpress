@@ -1,21 +1,22 @@
 <template>
-  <div>
-    <FlexibleContent :post="post" />
-    <TemporaryPostData :data="post" />
-  </div>
+  <component :is="template" :post="post" />
 </template>
 
 <script>
-import FlexibleContent from '~/components/AcfBlocks/FlexibleContent.vue';
-import TemporaryPostData from '~/components/TemporaryPostData.vue';
+import canFindTemplate from '~/mixins/canFindTemplate';
 import { postMeta } from '~/utilities/yoastHelpers';
 
 export default {
-  components: { FlexibleContent, TemporaryPostData },
-  async asyncData({ app, error }) {
+  mixins: [canFindTemplate],
+  async asyncData({ app, error, params }) {
     try {
-      const data = await app.$wp.frontPage().get();
-      return { post: data };
+      if (params.pathMatch === '') {
+        return { post: (await app.$wp.frontPage())[0] };
+      }
+
+      const post = await app.$wp.slug().name(params.pathMatch);
+
+      return { post };
     } catch (e) {
       const statusCode = e?.data?.status || 500;
       const message = e.message || 'There has been a problem retrieving data from the API';
