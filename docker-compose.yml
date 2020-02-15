@@ -22,7 +22,8 @@ services:
     depends_on:
       - ${NUXTPRESS_MYSQL_CONTAINER:-mysql.nuxtpress}
     volumes:
-      - ./wp-content:/var/www/html/wp-content:delegated
+      - ./wordpress/.htaccess:/var/www/html/.htaccess:delegated
+      - ./wordpress/wp-content:/var/www/html/wp-content:delegated
     expose:
       - '${NUXTPRESS_WP_PORT:-3080}'
     ports:
@@ -69,6 +70,7 @@ services:
 #          - default
 volumes:
   _db:
+  .htaccess:
   wp-content:
 networks:
   default:
