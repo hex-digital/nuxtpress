@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.2] - 2017-06-20
+## [0.0.2] - 2020-02-15
 
 ### 🌟 Highlights
 - Now using Nuxt 2.11
@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### ⚓ Dependency Upgrades 
 - Upgrade Nuxt from 2.10 to 2.11
 
-## [0.0.1] - 2017-06-20
+## [0.0.1] - 2019-12-03
 ### 🌟 Highlights
 
 - Initial release of NuxtPress
