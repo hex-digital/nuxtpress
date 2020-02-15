@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     flexibleContent() {
-      return this.post.acf.flexible_content || [];
+      return this.post?.acf?.flexible_content || []; // eslint-disable-line camelcase
     },
   },
   methods: {
