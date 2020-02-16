@@ -88,3 +88,5 @@ sw.*
 
 # Vim swap files
 *.swp
+
+assets/scss/settings/_settings.config.scss
