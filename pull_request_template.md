@@ -13,9 +13,10 @@ Please describe the tests that you ran to verify your changes. Please also note 
 
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made my code self-documenting where possible, with the use of clear variable and function names
+- [ ] I have commented the reasons for any complex or unusual code, so others can understand the context
 - [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
+- [ ] My changes do not generate any new warnings
 - [ ] Any dependent changes have been merged and published in downstream modules
 
 # JIRA Link
