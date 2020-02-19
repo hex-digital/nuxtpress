@@ -1,5 +1,9 @@
 # NuxtPress - WordPress x Nuxt Development Environment
 
+<p align="center">
+  <img width="300" height="300" src="https://user-images.githubusercontent.com/2754728/74832907-462a9780-5310-11ea-9cc7-9a581fcde91d.png">
+</p>
+
 **NuxtPress** combines [**_WordPress_**](https://wordpress.com/), the worlds biggest CMS with [**_NuxtJS_**](https://nuxtjs.org/),
 a brilliant front-end application framework, built on top of [**_Vue_**](https://vuejs.org/v2/guide/).
 
