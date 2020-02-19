@@ -5,9 +5,12 @@ Please include a summary of the change and which issue is fixed. Please also inc
 
 # How Has This Been Tested?
 
-Please describe the tests that you ran to verify your changes. Please also note any relevant details for your test configuration.
+Please include any tests that have been carried out and remove any tests from the list that isn't applicable or hasn't been done.
 
-
+  - Feature Tests
+  - Unit Tests
+  - Integration Tests
+  - Request Tests
 
 # Checklist:
 
@@ -18,6 +21,7 @@ Please describe the tests that you ran to verify your changes. Please also note 
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes do not generate any new warnings
 - [ ] Any dependent changes have been merged and published in downstream modules
+- [ ] I have added relevant tests for any new functionality I have added
 
 # JIRA Link
 
