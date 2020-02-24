@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BaseTypography from '~/components/Typography/BaseTypography.vue';
+import BaseTypography from '~/components/partials/Typography/BaseTypography.vue';
 
 export default {
   name: 'BaseTitle',

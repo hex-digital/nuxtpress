@@ -1,6 +1,6 @@
 import Button from './Components/Button.vue';
-import TheNavbar from '~/components/TheNavbar.vue';
-import TheFooter from '~/components/TheFooter.vue';
+import TheNavbar from '~/components/prefabs/TheNavbar.vue';
+import TheFooter from '~/components/prefabs/TheFooter.vue';
 
 export default {
   title: 'Components',

@@ -4,25 +4,23 @@
  * We therefore register those primitive and base components globally, so they're always available without importing.
  */
 import Vue from 'vue';
-import Box from '~/components/Primitives/Box/Box';
-import Cluster from '~/components/Primitives/Cluster/Cluster';
-import Content from '~/components/Primitives/Content/Content';
-import Cover from '~/components/Primitives/Cover/Cover';
-import Stack from '~/components/Primitives/Stack/Stack';
-import BaseButton from '~/components/BaseButton';
-import BaseTitle from '~/components/Typography/Title/BaseTitle';
-import BaseText from '~/components/Typography/Text/BaseText';
+import Cluster from '~/components/primitives/Cluster/Cluster';
+import Cover from '~/components/primitives/Cover/Cover';
+import Layout from '~/components/primitives/Layout/Layout';
+import LayoutItem from '~/components/primitives/Layout/LayoutItem';
+import Wrapper from '~/components/primitives/Wrapper/Wrapper';
+import BaseButton from '~/components/partials/BaseButton';
+import BaseTitle from '~/components/partials/Typography/Title/BaseTitle';
+import BaseText from '~/components/partials/Typography/Text/BaseText';
+import WpLink from '~/components/functional/wp-link';
+import BaseWysiwyg from '~/components/features/AcfBlocks/BaseWysiwyg';
+import ImageObject from '~/components/partials/ImageObject.vue';
 
-import WpLink from '~/components/Functional/wp-link';
-
-import BaseWysiwyg from '~/components/AcfBlocks/BaseWysiwyg';
-import ImageObject from '~/components/ImageObject.vue';
-
-Vue.component('Box', Box);
 Vue.component('Cluster', Cluster);
-Vue.component('Content', Content);
 Vue.component('Cover', Cover);
-Vue.component('Stack', Stack);
+Vue.component('Layout', Layout);
+Vue.component('LayoutItem', LayoutItem);
+Vue.component('Wrapper', Wrapper);
 
 Vue.component('BaseButton', BaseButton);
 
