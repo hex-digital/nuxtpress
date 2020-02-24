@@ -2,10 +2,11 @@ node_modules
 node_modules/*
 _db
 wordpress/wp-content/debug.log
-wordpress/wp-content/themes/twenty*
 wordpress/wp-content/languages
-wordpress/wp-content/uploads/*
 wordpress/wp-content/plugins/*
+wordpress/wp-content/themes/twenty*
+wordpress/wp-content/upgrade/*
+wordpress/wp-content/uploads/*
 wordpress/wp-content/wflogs/*
 .DS_Store
 nuxt/dist/*
