@@ -6,11 +6,11 @@ Please also include relevant motivation and context for these changes, and list 
 
 # How Has This Been Tested?
 
-  - [ ] Tested on local machine
-  - [ ] Tested on virtual devices
-  - [ ] Tested on other real devices
-  - [ ] Ran automated tests (unit/feature/e2e/snapshot)
-  - [ ] Other. List:
+- [ ] Tested on local machine
+- [ ] Tested on virtual devices
+- [ ] Tested on other real devices
+- [ ] Ran automated tests (unit/feature/e2e/snapshot)
+- [ ] Other. List:
   
 # Checklist:
 
