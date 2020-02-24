@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import FlexibleContent from '~/components/AcfBlocks/FlexibleContent.vue';
-import TemporaryPostData from '~/components/TemporaryPostData.vue';
+import FlexibleContent from '~/components/features/AcfBlocks/FlexibleContent.vue';
+import TemporaryPostData from '~/components/features/TemporaryPostData.vue';
 
 export default {
   name: 'DefaultTemplate',

@@ -42,6 +42,7 @@ export default {
   plugins: [
     '~/plugins/global-components.js',
     '~/plugins/vue-logger.js',
+    '~/plugins/breakpoints.js',
     { src: '~/plugins/wp-api-docker-connector', ssr: false },
   ],
   /*

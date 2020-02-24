@@ -6,8 +6,8 @@
 
 <script>
 import errorMixin from '~/mixins/errorMixin';
-import Error404 from '~/components/Error/Error404.vue';
-import Error500 from '~/components/Error/Error500.vue';
+import Error404 from '~/components/features/Error/Error404.vue';
+import Error500 from '~/components/features/Error/Error500.vue';
 
 export default {
   name: 'NuxtError',

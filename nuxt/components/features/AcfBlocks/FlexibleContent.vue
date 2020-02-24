@@ -13,8 +13,8 @@
 
 <script>
 import { hasOwnProp } from '~/utilities/typeHelpers';
-import TitleBlock from '~/components/AcfBlocks/FlexibleContent/TitleBlock';
-import TextBlock from '~/components/AcfBlocks/FlexibleContent/TextBlock';
+import TitleBlock from '~/components/features/AcfBlocks/FlexibleContent/TitleBlock';
+import TextBlock from '~/components/features/AcfBlocks/FlexibleContent/TextBlock';
 
 const blockTypeToComponentMap = {
   title_block: 'TitleBlock',
