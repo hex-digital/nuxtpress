@@ -72,6 +72,16 @@ Included are:
 
 This allows you to skip all the backend coding, but provides the flexibility to extend the backend if you want to.
 
+## Showcase
+
+<a name="showcase"/>
+
+The following sites are powered by NuxtPress:
+
+[https://prostack.uk](https://prostack.uk)
+
+Get in touch to have your site listed here.
+
 ## Links
 
 <a name="links"/>
