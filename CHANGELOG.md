@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🚀 Features  
 - Add support for WordPress templates [#6](https://github.com/hex-digital/nuxtpress/issues/6)
 
+### 🏡 Chore
+- Add missing environment files to the README and docs  
+
 ## [0.0.2] - 2020-02-15
 
 ### 🌟 Highlights

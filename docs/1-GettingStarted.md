@@ -71,6 +71,9 @@ To check if everything is running, visit `http://localhost:3080`.
 <a name="setup-nuxt-docker"/>
 
     cd nuxt
+    cp .env.dist .env
+    cp assets/scss/settings/_settings.config.dist.scss assets/scss/settings/_settings.config.scss
+    yarn install
     yarn dev
 
 Check if the frontend is running by opening `http://localhost:3000`.  

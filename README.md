@@ -50,7 +50,8 @@ Check out [the documentation directory](docs) for more detailed information on N
     git clone https://github.com/hex-digital/nuxtpress.git
     cd nuxtpress
     docker-compose up -d wp.nuxtpress
-    cd nuxt && yarn install && yarn dev
+    cd nuxt && cp .env.dist .env && cp assets/scss/settings/_settings.config.dist.scss assets/scss/settings/_settings.config.scss
+    yarn install && yarn dev
 
 - [http://localhost:3080/install.php](http://localhost:3080/install.php) - Install WordPress
 - [http://localhost:3080/wp-admin/options-permalink.php](http://localhost:3080/wp-admin/options-permalink.php) - Set permalinks to _Post name_

@@ -39,12 +39,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/global-components.js',
-    '~/plugins/vue-logger.js',
-    '~/plugins/breakpoints.js',
-    { src: '~/plugins/wp-api-docker-connector', ssr: false },
-  ],
+  plugins: ['~/plugins/global-components.js', '~/plugins/vue-logger.js', '~/plugins/breakpoints.js'],
   /*
    ** Nuxt.js dev-modules
    */

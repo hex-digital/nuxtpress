@@ -18,7 +18,7 @@ export default {
 
       return { post };
     } catch (e) {
-      const statusCode = e?.data?.status || 500;
+      const statusCode = (e && e.data && e.data.status) || 500;
       const message = e.message || 'There has been a problem retrieving data from the API';
       error({ statusCode, message });
     }
