@@ -59,6 +59,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Doc: https://auth.nuxtjs.org/guide
+    '@nuxtjs/auth',
     // '@nuxtjs/pwa',
     '~/modules/static/',
     [
@@ -73,6 +75,20 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** Auth configuration
+   ** See https://auth.nuxtjs.org/schemes/local.html
+   */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: `${wpUrl}/wp-json/jwt-auth/v1/token`, method: 'post', propertyName: 'token' },
+          user: { url: `${wpUrl}/wp-json/wp/v2/users/me`, method: 'get', propertyName: false },
+        },
+      },
+    },
+  },
   /*
    ** Build configuration
    */

@@ -38,6 +38,7 @@ services:
       WORDPRESS_DEBUG: ${NUXTPRESS_WP_DEBUG:-1}
       WORDPRESS_CONFIG_EXTRA: |
         define( 'WP_HEADLESS_URL', '${NUXTPRESS_URL_FRONTEND:-http://localhost:3000}' );
+        define( 'JWT_AUTH_SECRET_KEY', '${NUXTPRESS_WP_JWT_SECRET:-k4e8QlKsniiCbm7e49HEhQTsa4z11Uev}');
 
         define( 'WP_SITEURL', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
         define( 'WP_HOME', 'http://localhost:${NUXTPRESS_WP_PORT:-3080}' );
