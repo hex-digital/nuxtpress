@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🚀 Features  
 - Add support for WordPress templates [#6](https://github.com/hex-digital/nuxtpress/issues/6)
+- Add example login page and integrate auth store with WP API client [#7](https://github.com/hex-digital/nuxtpress/issues/7)
 
 ### 🏡 Chore
 - Add missing environment files to the README and docs  
